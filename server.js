@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 app.use("/api/books", booksRoutes);
 app.use("/api/users", userRoutes);
 app.use("/uploads", express.static("uploads"));
